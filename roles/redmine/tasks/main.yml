@@ -1,0 +1,16 @@
+---
+- name: Templating and copy .env file
+  ansible.builtin.template:
+    src: ../templates/.env.j2
+    dest: "{{ env_file_location }}/.env"
+
+- name: Deploy Redmine
+  docker_container:
+    name: stud-redmine
+    image: "redmine:5.0.7-alpine3.18"
+    restart_policy: always
+    state: started
+    ports:
+      - 8080:3000
+    env_file: "{{ env_file_location }}/.env"
+
