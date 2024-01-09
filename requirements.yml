@@ -2,6 +2,7 @@
 roles:
   - name: geerlingguy.pip
   - name: geerlingguy.docker
+  - name: ome.postgresql_client
 
 collections:
   - community.docker

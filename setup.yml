@@ -2,8 +2,11 @@
 - hosts: all
   become: yes
   roles:
-    - geerlingguy.docker
-    - geerlingguy.pip
+    - role: init
+    - role: geerlingguy.docker
+    - role: geerlingguy.pip
+    - role: ome.postgresql_client
+      postgresql_version: "14"
 
   vars:
     docker_packages:
@@ -25,18 +28,3 @@
     docker_compose_package_state: present
 
     docker_users: "{{ docker_group_users }}"
-
-  tasks:
-    - name: Get all groups
-      ansible.builtin.getent:
-        database: group
-
-    - name: Add "{{ ansible_ssh_user }}" to sudo
-      ansible.builtin.user:
-        name: "{{ ansible_ssh_user }}"
-        groups: "{{ item }}"
-        append: yes
-        create_home: false
-      when: item in ansible_facts.getent_group
-      with_items:
-        - sudo
