@@ -13,13 +13,15 @@
     ansible-galaxy install -r ./requirements.yml 
    ```
 #### Конфигурирование серверов
-1. Перейти в директорию `ansible` проекта.
-2. Выполнить команду ```make setup```
-При этом будет выполнено:
-- установка ролей и коллекций Ansible (если выполнялось ранее, то пропустим без ошибок)
-- установка Docker и docker-compose на удаленные сервера, добавление пользователей `docker_group_users` в группу `docker`  
-- установка необходимых пакетов python на удаленные сервера
-- добавление пользователя `ansible_ssh_user` в группу `sudo`
+1. Выполнить команду ```make setup```.
+   <br>
+   При этом будет выполнено:
+      - установка ролей и коллекций Ansible (если выполнялось ранее, то пропустим без ошибок)
+      - установка Docker и docker-compose на удаленные сервера, добавление пользователей `docker_group_users` в группу `docker`  
+      - установка необходимых пакетов python на удаленные сервера
+      - добавление пользователя `ansible_ssh_user` в группу `sudo`
+      - установка postrges клиента
+2. Выполнить ```make deploy```
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/yura2201/devops-for-programmers-project-76/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/yura2201/devops-for-programmers-project-76/actions)
