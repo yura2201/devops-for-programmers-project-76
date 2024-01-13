@@ -8,3 +8,12 @@
 
   roles:
     - role: redmine
+
+  #################
+- hosts: webservers
+  gather_facts: no
+  become: yes
+  vars_files:
+    - vars/secret_vars.yml
+  roles:
+    - role: datadog

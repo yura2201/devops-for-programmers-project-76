@@ -1,0 +1,9 @@
+datadog_api_key: "{{ datadog_api_key_value }}"
+datadog_site: datadoghq.eu
+datadog_checks:
+  redmine:
+    init_config:
+      instances:
+        - name: Hexlet Redmine
+          url: http://yurait6.ru
+          check_certificate_expiration: false
