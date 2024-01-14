@@ -1,4 +1,11 @@
 ---
+- name: Create Dest env directory
+  ansible.builtin.file:
+    path: "{{ env_file_location }}"
+    state: directory
+    owner: "{{ ansible_ssh_user }}"
+    recurse: yes
+
 - name: Templating and copy .env file
   ansible.builtin.template:
     src: ../templates/.env.j2
