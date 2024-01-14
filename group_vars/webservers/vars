@@ -1,0 +1,9 @@
+---
+pg_host: "{{ vault_pg_host }}"
+pg_database: "{{ vault_pg_database }}"
+pg_user: "{{ vault_pg_user }}"
+pg_password: "{{ vault_pg_password }}"
+pg_port: "{{ vault_pg_port }}"
+redmine_secret_key_base: "{{ vault_redmine_secret_key_base }}"
+env_file_location: "{{ vault_env_file_location }}"
+datadog_api_key_value: "{{ vault_datadog_api_key_value }}"

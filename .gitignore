@@ -1,2 +1,2 @@
 /.idea/
-/vars/secret_vars.yml
+/group_vars/webservers/vault
