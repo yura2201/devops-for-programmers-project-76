@@ -18,6 +18,6 @@
     restart_policy: always
     state: started
     ports:
-      - 8080:3000
+      - "{{ app_port }}:{{ container_port }}"
     env_file: "{{ env_file_location }}/.env"
 

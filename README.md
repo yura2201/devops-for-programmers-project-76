@@ -23,5 +23,12 @@
       - установка postrges клиента
 2. Выполнить ```make deploy```
 
+### Приложение
+http://yurait6.ru/
+
+[Документация Redmine](https://www.redmine.org/guide)
+
+[Docker](https://hub.docker.com/_/redmine)
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/yura2201/devops-for-programmers-project-76/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/yura2201/devops-for-programmers-project-76/actions)
